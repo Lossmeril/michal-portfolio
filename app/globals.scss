@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link {
+  li {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+
+      width: 0;
+      height: 6pt;
+      background-color: black;
+
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &:hover,
+  &:active {
+    li {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

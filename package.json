@@ -13,7 +13,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "sass": "^1.68.0"
+    "sass": "^1.68.0",
+    "tw-merge": "^0.0.1-alpha.3"
   },
   "devDependencies": {
     "@types/node": "^20",

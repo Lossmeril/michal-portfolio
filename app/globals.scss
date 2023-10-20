@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  text-transform: lowercase;
+  position: relative;
+  margin-bottom: 3rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+
+    width: 40pt;
+    height: 6pt;
+    background-color: #48bf84;
+  }
+}
+
 .link {
   li {
     position: relative;
@@ -35,10 +52,10 @@
 }
 
 .portfolio-card {
-  background-color: #48bf84;
+  background-color: black;
   .title {
     position: absolute;
-    left: 5%;
+    left: 10%;
     bottom: -25%;
 
     transition: all 0.5s ease-in-out;
@@ -46,7 +63,6 @@
 
   .image {
     filter: grayscale(1);
-    mix-blend-mode: screen;
     transition: all 0.5s ease-in-out;
   }
 
@@ -54,10 +70,11 @@
     .image {
       transform: scale(1.2);
       opacity: 0.5;
+      filter: grayscale(1);
     }
 
     .title {
-      bottom: 5%;
+      bottom: 10%;
     }
   }
 }

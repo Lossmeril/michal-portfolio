@@ -49,7 +49,7 @@ const Skill: React.FC<SkillProps> = ({ skill, confidence, note }) => {
 const SkillsPage = () => {
   return (
     <>
-      <h1 className="text-4xl font-black mb-4">My skills</h1>
+      <h1 className="text-4xl font-black">My skills</h1>
       <p className="lowercase mb-12">All the things I can do</p>
       <div className="flex flex-row flex-wrap justify-start">
         <SkillSet name="General skills">

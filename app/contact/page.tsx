@@ -34,7 +34,7 @@ const ContactItem: React.FC<ContactItemProps> = ({
 const FilmographyPage = () => {
   return (
     <>
-      <h1 className="text-4xl font-black mb-4">Get in touch!</h1>
+      <h1 className="text-4xl font-black">Get in touch!</h1>
       <p className="lowercase mb-12">
         Interested in my skills? Wanna collaborate? Just wating to chat? Find me
         bellow!

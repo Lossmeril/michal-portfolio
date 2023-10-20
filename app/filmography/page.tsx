@@ -28,7 +28,7 @@ const films: Array<Film> = [
 const FilmographyPage = () => {
   return (
     <>
-      <h1 className="text-4xl font-black mb-4">Filmography</h1>
+      <h1 className="text-4xl font-black">Filmography</h1>
       <p className="lowercase mb-12">Watch my stuff</p>
       <div className="flex flex-row flex-wrap justify-start gap-8">
         {films.map((item) => (

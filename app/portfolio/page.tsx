@@ -36,8 +36,11 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
 
   return (
     <div
-      className="absolute top-0 left-0 w-screen h-screen overflow-hidden"
-      style={{ display: isOpen ? "block" : "none" }}
+      className="absolute top-0 left-0 w-screen h-screen overflow-hidden transition-all"
+      style={{
+        pointerEvents: isOpen ? "all" : "none",
+        opacity: isOpen ? "1" : "0",
+      }}
       onClick={() => handleModalClose()}
     >
       <div className="absolute w-[95%] md:w-[80%] h-[90%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-20">
@@ -64,7 +67,7 @@ const PortfolioPage = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-black mb-4">Portfolio</h1>
+      <h1 className="text-4xl font-black">Portfolio</h1>
       <p className="lowercase mb-12">Take a look at my work</p>
       <div className="flex flex-row flex-wrap justify-start gap-8">
         {items.map((item) => (
@@ -80,7 +83,7 @@ const PortfolioPage = () => {
               className="object-cover image"
             />
             <div className="absolute w-full title">
-              <h3 className="font-bold">{item.name}</h3>
+              <h3 className="font-black text-white">{item.name}</h3>
             </div>
           </div>
         ))}

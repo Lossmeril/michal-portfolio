@@ -16,7 +16,10 @@ const PortfolioPage = () => {
       <p className="lowercase mb-12">Take a look at my work</p>
       <div className="flex flex-row flex-wrap justify-start gap-8">
         {items.map((item) => (
-          <div className="h-56 w-56 overflow-hidden" key={item.img}>
+          <div
+            className=" aspect-square md:h-56 w-full md:w-56 overflow-hidden"
+            key={item.img}
+          >
             <img
               alt={item.img}
               src={item.img}

@@ -17,14 +17,24 @@ const SkillSet: React.FC<SkillSetProps> = ({ name, children }) => {
 interface SkillProps {
   skill: string;
   confidence: number;
+  note?: string;
 }
 
-const Skill: React.FC<SkillProps> = ({ skill, confidence }) => {
+const Skill: React.FC<SkillProps> = ({ skill, confidence, note }) => {
   const confidenceBars = !(confidence > 5 || confidence < 0) ? confidence : 0;
 
   return (
     <div className="">
-      <h3 className="lowercase">{skill}</h3>
+      <h3 className="lowercase">
+        {skill}
+        {note ? (
+          <span className="italic lowercase text-sm font-light">
+            {" (" + note + ")"}
+          </span>
+        ) : (
+          <></>
+        )}
+      </h3>
       <div className="flex flex-row flex-nowrap h-1 mt-2 mb-4 w-[33%]">
         {[...Array(confidenceBars)].map((e, i) => (
           <div key={i} className="basis-1/5">
@@ -50,17 +60,6 @@ const SkillsPage = () => {
           <Skill skill="Photography" confidence={0} />
         </SkillSet>
 
-        <SkillSet name="certificates">
-          <li></li>
-        </SkillSet>
-
-        <SkillSet name="languages">
-          <Skill skill="Czech & Slovak" confidence={5} />
-          <Skill skill="English" confidence={5} />
-          <Skill skill="Old Norse" confidence={1} />
-        </SkillSet>
-      </div>
-      <div className="flex flex-row flex-wrap justify-start">
         <SkillSet name="Programming and technologies">
           <Skill skill="HTML + CSS" confidence={5} />
           <Skill skill="React" confidence={4} />
@@ -72,9 +71,19 @@ const SkillsPage = () => {
 
         <SkillSet name="software">
           <Skill skill="Adobe Creative Cloud Suite" confidence={5} />
-          <Skill skill="Microsoft Office Suite" confidence={5} />
+          <Skill
+            skill="Microsoft Office Suite"
+            confidence={5}
+            note="ECDL certificate holder"
+          />
           <Skill skill="AVID Media Composer" confidence={4} />
           <Skill skill="DaVinci Resolve" confidence={5} />
+        </SkillSet>
+
+        <SkillSet name="languages">
+          <Skill skill="Czech & Slovak" confidence={5} note="native" />
+          <Skill skill="English" confidence={5} note="fluent" />
+          <Skill skill="Old Norse" confidence={1} note="basic knowledge" />
         </SkillSet>
       </div>
     </>

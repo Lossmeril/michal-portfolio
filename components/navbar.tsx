@@ -11,7 +11,7 @@ const links = [
   ["/portfolio", "Portfolio"],
   ["/filmography", "Filmography"],
   ["/skills", "Skills"],
-  ["", "Contact"],
+  ["/contact", "Contact"],
 ];
 
 interface MobileMenuProps {

@@ -17,10 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
-        <main className="p-12 md:p-24 min-h-screen">
-          <Navbar />
-          {children}
+      <body className={font.className + " overflow-x-hidden"}>
+        <main className="px-12 md:px-24 pt-12 md:pt-24 min-h-screen flex flex-col flex-nowrap justify-between">
+          <div>
+            <Navbar />
+            {children}
+          </div>
           <Footer />
         </main>
       </body>

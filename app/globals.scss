@@ -56,17 +56,14 @@ h1 {
 }
 
 .portfolio-card {
-  background-color: black;
-
   .image {
-    filter: grayscale(0);
     transition: all 0.5s ease-in-out;
   }
 
   &:hover {
     .image {
       transform: scale(1.2);
-      opacity: 0.5;
+      filter: brightness(50%);
       cursor: pointer;
     }
   }

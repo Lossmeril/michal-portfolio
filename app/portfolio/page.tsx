@@ -39,7 +39,7 @@ const PortfolioPage = () => {
     <>
       <h1 className="text-4xl font-black">Portfolio</h1>
       <p className="lowercase mb-12">Take a look at my work</p>
-      <div className="flex flex-row flex-wrap justify-start gap-8">
+      <div className="flex flex-col md:flex-row flex-wrap justify-start gap-8">
         {items.map((item) => (
           <div key={item.img}>
             <div
@@ -52,6 +52,8 @@ const PortfolioPage = () => {
                 fill
                 className="object-cover image"
                 loading="lazy"
+                placeholder="blur"
+                blurDataURL="/img/blur.png"
               />
             </div>
             <h2 className="text-md font-bold">{item.name}</h2>

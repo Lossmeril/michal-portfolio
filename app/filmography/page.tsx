@@ -1,9 +1,12 @@
+import Image from "next/image";
+
 type Film = {
   name: string;
   poster: string;
   year: string;
   genre: string;
-  length: Number;
+  length: Number | "N/A";
+  director: string;
 };
 
 const films: Array<Film> = [
@@ -14,6 +17,7 @@ const films: Array<Film> = [
     year: "2023",
     genre: "documentary",
     length: 106,
+    director: "Michal Špitálský",
   },
   {
     name: "Somnio Ergo Sum",
@@ -22,6 +26,26 @@ const films: Array<Film> = [
     year: "2023",
     genre: "experimental",
     length: 3,
+    director: "Michal Špitálský",
+  },
+];
+
+const tbaFilms: Array<Film> = [
+  {
+    name: "Project Doll",
+    poster: "/img/film/tba/doll.jpg",
+    year: "TBA",
+    genre: "cyberpunk gender drama",
+    length: "N/A",
+    director: "A. Morek & M. Špitálský",
+  },
+  {
+    name: "Project Tennis Ball",
+    poster: "/img/film/tba/tennis ball.jpg",
+    year: "TBA",
+    genre: "crimi animation",
+    length: "N/A",
+    director: "M. Špitálský & G. Matthews",
   },
 ];
 
@@ -30,7 +54,7 @@ const FilmographyPage = () => {
     <>
       <h1 className="text-4xl font-black">Filmography</h1>
       <p className="lowercase mb-12">Watch my stuff</p>
-      <div className="flex flex-row flex-wrap justify-start gap-8">
+      <div className="flex flex-row flex-wrap justify-start gap-8 mb-12">
         {films.map((item) => (
           <div key={item.name}>
             <div className="aspect-[210/297] w-56 overflow-hidden mb-4">
@@ -40,9 +64,34 @@ const FilmographyPage = () => {
                 className="w-full h-full object-stratch"
               />
             </div>
-            <h2 className="text-md font-bold">{item.name}</h2>
-            <p className="text-sm italic">
+            <h3 className="text-md font-bold">{item.name}</h3>
+            <p className="text-sm font-bold">{"dir. " + item.director}</p>
+            <p className="text-sm italic font-light">
               {item.genre + ", " + item.year + ", " + item.length + " minutes"}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-black lowercase mb-4">Upcoming projects</h2>
+      <div className="flex flex-row flex-wrap justify-start gap-8">
+        {tbaFilms.map((film) => (
+          <div key={film.name}>
+            <div className="aspect-[210/297] w-56 overflow-hidden mb-4 relative">
+              <Image
+                alt={film.poster}
+                src={film.poster}
+                className="w-full h-full object-stratch"
+                fill
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/img/blur.png"
+              />
+            </div>
+            <h3 className="text-md font-bold">{film.name}</h3>
+            <p className="text-sm font-bold">{"dir. " + film.director}</p>
+            <p className="text-sm italic font-light">
+              {film.genre + ", " + film.year}
             </p>
           </div>
         ))}

@@ -57,16 +57,9 @@ h1 {
 
 .portfolio-card {
   background-color: black;
-  .title {
-    position: absolute;
-    left: 10%;
-    bottom: -25%;
-
-    transition: all 0.5s ease-in-out;
-  }
 
   .image {
-    filter: grayscale(1);
+    filter: grayscale(0);
     transition: all 0.5s ease-in-out;
   }
 
@@ -74,11 +67,7 @@ h1 {
     .image {
       transform: scale(1.2);
       opacity: 0.5;
-      filter: grayscale(1);
-    }
-
-    .title {
-      bottom: 10%;
+      cursor: pointer;
     }
   }
 }

@@ -34,7 +34,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
           className="object-contain"
         />
       </div>
-      <div className="z-10 absolute top-0 left-0 w-screen h-screen bg-black opacity-50"></div>
+      <div className="z-10 absolute top-0 left-0 w-screen h-screen bg-black opacity-90"></div>
     </div>
   );
 };

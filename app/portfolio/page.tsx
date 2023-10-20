@@ -7,16 +7,22 @@ import { Dispatch, SetStateAction, useState } from "react";
 export type PortolioItem = {
   name: string;
   img: string;
+  year: string;
+  type: string;
 };
 
 const items: Array<PortolioItem> = [
   {
     name: "Dreams on a tape",
     img: "/img/portfolio/dreams on a tape.jpg",
+    year: "2022",
+    type: "mixed digital art",
   },
   {
     name: "The Emperor",
     img: "/img/portfolio/the emperor.jpg",
+    year: "2021",
+    type: "vector digital art",
   },
 ];
 
@@ -35,20 +41,21 @@ const PortfolioPage = () => {
       <p className="lowercase mb-12">Take a look at my work</p>
       <div className="flex flex-row flex-wrap justify-start gap-8">
         {items.map((item) => (
-          <div
-            className="aspect-square w-full md:w-56 overflow-hidden relative portfolio-card"
-            key={item.img}
-            onClick={() => handleModalOpen(item)}
-          >
-            <Image
-              alt={item.name}
-              src={item.img}
-              fill
-              className="object-cover image"
-            />
-            <div className="absolute w-full title">
-              <h3 className="font-black text-white">{item.name}</h3>
+          <div key={item.img}>
+            <div
+              className="aspect-square w-full md:w-56 overflow-hidden relative portfolio-card mb-4"
+              onClick={() => handleModalOpen(item)}
+            >
+              <Image
+                alt={item.name}
+                src={item.img}
+                fill
+                className="object-cover image"
+                loading="lazy"
+              />
             </div>
+            <h2 className="text-md font-bold">{item.name}</h2>
+            <p className="text-sm italic">{item.type + ", " + item.year}</p>
           </div>
         ))}
       </div>

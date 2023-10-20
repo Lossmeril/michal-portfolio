@@ -1,7 +1,12 @@
 const HomePage = () => {
   return (
     <>
-      <h1 className="text-4xl font-black">Michal Špitálský</h1>
+      <h1 className="text-4xl font-black">
+        Michal Špitálský{" "}
+        <span className="text-sm">
+          art name <span className="lossmeril-green">Lossmeril</span>
+        </span>
+      </h1>
       <p className="lowercase mb-12">Filmmaker, designer and artist</p>
 
       <h2 className="text-lg font-bold lowercase mb-4 ">education</h2>

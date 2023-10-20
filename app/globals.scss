@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.lossmeril-green {
+  color: #48bf84;
+}
+
 h1 {
   text-transform: lowercase;
   position: relative;
@@ -77,4 +81,8 @@ h1 {
       bottom: 10%;
     }
   }
+}
+
+.modal {
+  transition: all 0.33s ease-in-out;
 }

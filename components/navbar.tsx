@@ -7,7 +7,7 @@ import { IoMdClose } from "react-icons/io";
 
 const links = [
   ["/", "Home"],
-  ["", "Projects"],
+  ["/projects", "Projects"],
   ["/portfolio", "Portfolio"],
   ["/filmography", "Filmography"],
   ["/skills", "Skills"],

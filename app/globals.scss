@@ -33,3 +33,31 @@
 .mobile-menu .link li::after {
   background-color: white;
 }
+
+.portfolio-card {
+  background-color: #48bf84;
+  .title {
+    position: absolute;
+    left: 5%;
+    bottom: -25%;
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  .image {
+    filter: grayscale(1);
+    mix-blend-mode: screen;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    .image {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+
+    .title {
+      bottom: 5%;
+    }
+  }
+}

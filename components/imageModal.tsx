@@ -18,7 +18,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
 
   return (
     <div
-      className="absolute top-0 left-0 w-screen h-screen overflow-hidden modal"
+      className="fixed top-0 left-0 w-screen h-screen overflow-hidden modal"
       style={{
         pointerEvents: isOpen ? "all" : "none",
         opacity: isOpen ? "1" : "0",

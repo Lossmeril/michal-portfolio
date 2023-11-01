@@ -1,17 +1,16 @@
-import { PortolioItem } from "@/app/portfolio/page";
 import { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 
-interface PortfolioModalProps {
+interface ImageModalProps {
   isOpen: boolean;
   modalToggle: Dispatch<SetStateAction<boolean>>;
-  modalImage: PortolioItem;
+  image: string;
 }
 
-const PortfolioModal: React.FC<PortfolioModalProps> = ({
+const ImageModal: React.FC<ImageModalProps> = ({
   isOpen,
   modalToggle,
-  modalImage,
+  image,
 }) => {
   const handleModalClose = () => {
     modalToggle(false);
@@ -27,16 +26,11 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
       onClick={() => handleModalClose()}
     >
       <div className="absolute w-[95%] md:w-[80%] h-[90%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] z-20">
-        <Image
-          src={modalImage.img}
-          alt={modalImage.name}
-          fill
-          className="object-contain"
-        />
+        <Image src={image} alt="" fill className="object-contain" />
       </div>
       <div className="z-10 absolute top-0 left-0 w-screen h-screen bg-black opacity-90"></div>
     </div>
   );
 };
 
-export default PortfolioModal;
+export default ImageModal;

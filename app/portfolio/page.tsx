@@ -1,6 +1,6 @@
 "use client";
 
-import PortfolioModal from "@/components/portfolioModal";
+import ImageModal from "@/components/imageModal";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 
@@ -28,9 +28,9 @@ const items: Array<PortolioItem> = [
 
 const PortfolioPage = () => {
   const [modalOpen, setModal] = useState(false);
-  const [modalImage, setModalImage] = useState(items[0]);
+  const [modalImage, setModalImage] = useState(items[0].img);
 
-  const handleModalOpen = (newImage: PortolioItem) => {
+  const handleModalOpen = (newImage: string) => {
     setModal(true);
     setModalImage(newImage);
   };
@@ -44,7 +44,7 @@ const PortfolioPage = () => {
           <div key={item.img}>
             <div
               className="aspect-square w-full md:w-56 overflow-hidden relative portfolio-card mb-4"
-              onClick={() => handleModalOpen(item)}
+              onClick={() => handleModalOpen(item.img)}
             >
               <Image
                 alt={item.name}
@@ -61,10 +61,10 @@ const PortfolioPage = () => {
           </div>
         ))}
       </div>
-      <PortfolioModal
+      <ImageModal
         isOpen={modalOpen}
         modalToggle={setModal}
-        modalImage={modalImage}
+        image={modalImage}
       />
     </>
   );

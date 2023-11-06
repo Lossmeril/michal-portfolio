@@ -132,6 +132,78 @@ const items: Array<PortolioItem> = [
     year: "2022",
     type: "theatre photography",
   },
+  {
+    name: "A Lightbulb",
+    img: "/img/portfolio/photos/lightbulb.jpg",
+    year: "2023",
+    type: "nature photography",
+  },
+  {
+    name: "Traveling Cart",
+    img: "/img/portfolio/travelling cart.jpg",
+    year: "2022",
+    type: "digital vintage poster",
+  },
+  {
+    name: "Joja Mart Sale",
+    img: "/img/portfolio/joja.jpg",
+    year: "2020",
+    type: "digital vintage poster",
+  },
+  {
+    name: "Adventurer's Guild",
+    img: "/img/portfolio/adventurers guild.jpg",
+    year: "2020",
+    type: "digital vintage poster",
+  },
+  {
+    name: "Stardew Valley Spa",
+    img: "/img/portfolio/spa.jpg",
+    year: "2021",
+    type: "digital vintage poster",
+  },
+  {
+    name: "Dead Fish",
+    img: "/img/portfolio/dead fish.jpg",
+    year: "2019",
+    type: "parkour team logo",
+  },
+  {
+    name: "Labská High School E-sports",
+    img: "/img/portfolio/labska high school.jpg",
+    year: "2021",
+    type: "e-sport team logo",
+  },
+  {
+    name: "FORT FRAMES concept",
+    img: "/img/portfolio/fort logo 1.jpg",
+    year: "2021",
+    type: "company logo prototype",
+  },
+  {
+    name: "NHS App Illustrations",
+    img: "/img/portfolio/nhs app.jpg",
+    year: "2021",
+    type: "nhs covid app diagrams",
+  },
+  {
+    name: "R8 2022",
+    img: "/img/portfolio/r8 2022.jpg",
+    year: "2022",
+    type: "film festival poster",
+  },
+  {
+    name: "R8 2023",
+    img: "/img/portfolio/r8 2023.jpg",
+    year: "2023",
+    type: "film festival poster",
+  },
+  {
+    name: "Covid portál",
+    img: "/img/portfolio/covid portal.jpg",
+    year: "2020",
+    type: "government portal logo",
+  },
 ];
 
 const PortfolioPage = () => {

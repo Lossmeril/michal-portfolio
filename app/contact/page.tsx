@@ -36,7 +36,7 @@ const FilmographyPage = () => {
     <>
       <h1 className="text-4xl font-black">Get in touch!</h1>
       <p className="lowercase mb-12">
-        Interested in my skills? Wanna collaborate? Just wating to chat? Find me
+        Interested in my skills? Wanna collaborate? Just wanna chat? Find me
         bellow!
       </p>
       <div className="flex-col gap-4">

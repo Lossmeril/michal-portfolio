@@ -4,28 +4,46 @@ import ImageModal from "@/components/imageModal";
 import Image from "next/image";
 import { useState } from "react";
 
+type ProjectImage = {
+  path: string;
+  name: string;
+  year: string;
+};
+
 type Project = {
   name: string;
   desc: string;
-  imgs: Array<string>;
+  imgs: Array<ProjectImage>;
 };
 
 const projects: Array<Project> = [
   {
     name: "MK Psychology",
     desc: "I have worked with MK Psychology for a long time. They receive a full branding package, including a curated and maintained brand identity, a social media posts, video content and more. A part of the brand identity is a logotype, a set of original style-unified icons and occasional illustrations.",
-    imgs: ["/img/portfolio/dreams on a tape.jpg"],
+    imgs: [
+      {
+        path: "/img/portfolio/dreams on a tape.jpg",
+        name: "Test 1",
+        year: "2022",
+      },
+    ],
   },
   {
     name: "FORT FRAMES",
     desc: "FORT FRAMES is a small factory manifacturing world-class bicycle frames that was in need of re-branding and new company presentation. I have worked on creating a new website reflecting the quality of FORT's products. On top of that, FORT received a new logotype and we are currently working on providing FORT with additional branding materials such as business cards, letterheads and other stationary.",
-    imgs: ["/img/portfolio/dreams on a tape.jpg"],
+    imgs: [
+      {
+        path: "/img/portfolio/dreams on a tape.jpg",
+        name: "Test 1",
+        year: "2022",
+      },
+    ],
   },
 ];
 
 const ProjectsPage = () => {
   const [modalOpen, setModal] = useState(false);
-  const [modalImage, setModalImage] = useState(projects[0].imgs[0]);
+  const [modalImage, setModalImage] = useState(projects[0].imgs[0].path);
 
   const handleModalOpen = (newImage: string) => {
     setModal(true);
@@ -46,21 +64,27 @@ const ProjectsPage = () => {
             </div>
             <div className="w-full flex flex-row flex-nowrap gap-4">
               {project.imgs.map((img) => (
-                <div
-                  key={img}
-                  className="aspect-square w-full md:w-56 overflow-hidden relative portfolio-card mb-4 basis-1/8"
-                  style={{ backgroundColor: img }}
-                  onClick={() => handleModalOpen(img)}
-                >
-                  <Image
-                    alt=""
-                    src={img}
-                    fill
-                    className="object-cover image"
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL="/img/blur.png"
-                  />
+                <div key={img.path}>
+                  <div
+                    className="aspect-square w-full md:w-56 overflow-hidden relative portfolio-card mb-4"
+                    onClick={() => handleModalOpen(img.path)}
+                  >
+                    <Image
+                      alt={img.name}
+                      src={img.path}
+                      fill
+                      className="object-cover image"
+                      loading="lazy"
+                      placeholder="blur"
+                      blurDataURL="/img/blur.png"
+                    />
+                  </div>
+                  <h2 className="text-md font-bold">
+                    {img.name.length > 26
+                      ? img.name.substring(0, 26 - 3) + "..."
+                      : img.name}
+                  </h2>
+                  <p className="text-sm italic">{img.year}</p>
                 </div>
               ))}
             </div>

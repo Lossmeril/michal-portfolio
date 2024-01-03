@@ -199,10 +199,16 @@ const items: Array<PortolioItem> = [
     type: "film festival poster",
   },
   {
-    name: "Covid portál",
+    name: "Covid Portál",
     img: "/img/portfolio/covid portal.jpg",
     year: "2020",
     type: "government portal logo",
+  },
+  {
+    name: "Starfall",
+    img: "/img/portfolio/starfall.jpg",
+    year: "2023",
+    type: "vector illustration",
   },
 ];
 

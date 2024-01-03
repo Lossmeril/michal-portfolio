@@ -39,6 +39,17 @@ const projects: Array<Project> = [
       },
     ],
   },
+  {
+    name: "SFÉRA educational centre",
+    desc: "SFÉRA is an educational centre in Pardubice focusing on both school and free-time education, being equipped with high-class technology. Besides working as a tutor in IT and graphic design workshops, I create promotional materials based off the established brand identity as a in-house graphic designer.",
+    imgs: [
+      {
+        path: "/img/portfolio/dreams on a tape.jpg",
+        name: "Test 1",
+        year: "2022",
+      },
+    ],
+  },
 ];
 
 const ProjectsPage = () => {
@@ -53,7 +64,10 @@ const ProjectsPage = () => {
   return (
     <>
       <h1 className="text-4xl font-black">projects I have worked on</h1>
-      <p className="lowercase mb-12">All the things I can do</p>
+      <p className="lowercase mb-12">
+        A selection of the most interesting from the vast range of projects I
+        have been involved with
+      </p>
       <div className="flex flex-row flex-wrap justify-start"></div>
       {projects.map((project) => (
         <div key={project.name}>

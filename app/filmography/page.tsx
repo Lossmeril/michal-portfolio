@@ -19,7 +19,7 @@ const films: Array<Film> = [
     poster: "/img/film/garden of eden.jpg",
     year: "2023",
     genre: "documentary",
-    length: 106,
+    length: 105,
     director: "Michal Špitálský",
   },
   {
@@ -35,7 +35,7 @@ const films: Array<Film> = [
     poster: "/img/film/off the record.jpg",
     year: "2021",
     genre: "documentary",
-    length: 3,
+    length: 10,
     director: "Michal Špitálský",
   },
 ];
@@ -107,7 +107,7 @@ const FilmographyPage = () => {
               <Image
                 alt={film.poster}
                 src={film.poster}
-                className="w-full h-full object-stratch"
+                className="w-full h-full object-stretch"
                 fill
                 loading="lazy"
                 placeholder="blur"

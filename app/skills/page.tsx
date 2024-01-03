@@ -58,6 +58,7 @@ const SkillsPage = () => {
           <Skill skill="Cinematography and film" confidence={0} />
           <Skill skill="Marketing" confidence={0} />
           <Skill skill="Photography" confidence={0} />
+          <Skill skill="Tutoring" confidence={0} />
         </SkillSet>
 
         <SkillSet name="Programming and technologies">
